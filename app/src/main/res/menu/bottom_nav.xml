@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home_menu"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        app:cnb_iconColor="@color/purple_500"/>
+
+    <item
+        android:id="@+id/other_menu"
+        android:title="Other"
+        android:icon="@drawable/ic_scroll"
+        app:cnb_iconColor="@color/second_color"/>
+
+
+</menu>
