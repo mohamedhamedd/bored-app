@@ -10,6 +10,7 @@ import com.bored.boredom.getbored.boredashell.theboredbutton.R
 import com.bored.boredom.getbored.boredashell.theboredbutton.databinding.ActivityHomeBinding
 import com.bored.boredom.getbored.boredashell.theboredbutton.views.videos.VideosActivity
 import com.bored.boredom.getbored.boredashell.theboredbutton.views.webview.WebViewActivity
+import hotchemi.android.rate.AppRate
 import kotlinx.android.synthetic.main.activity_home.*
 import maes.tech.intentanim.CustomIntent
 import org.kodein.di.Kodein
@@ -32,6 +33,7 @@ class HomeActivity : AppCompatActivity(), IHomeInterface, KodeinAware, IProperti
         viewModel.IProperties = this
         binding.viewModel = viewModel
         viewModel.getActivity()
+        RateUs()
 
     }
 
@@ -83,5 +85,17 @@ class HomeActivity : AppCompatActivity(), IHomeInterface, KodeinAware, IProperti
         val intent = Intent(this, VideosActivity::class.java)
         startActivity(intent)
         CustomIntent.customType(this, "left-to-right")
+    }
+
+    fun RateUs(){
+        AppRate.with(this)
+            .setInstallDays(1) // default 10, 0 means install day.
+            .setLaunchTimes(3) // default 10
+            .setRemindInterval(2) // default 1
+            .monitor()
+
+        // Show a dialog if meets conditions
+        AppRate.showRateDialogIfMeetsConditions(this);
+
     }
 }

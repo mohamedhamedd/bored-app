@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.bored.boredom.getbored.boredashell.theboredbutton.R
 import com.bored.boredom.getbored.boredashell.theboredbutton.views.home.HomeActivity
 import com.startapp.sdk.adsbase.StartAppAd
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         StartAppAd.disableSplash()
 
         hideSystemUI(this)

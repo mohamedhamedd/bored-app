@@ -12,8 +12,8 @@ android {
         applicationId "com.bored.boredom.getbored.boredashell.theboredbutton"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 3
-        versionName "2.0.0"
+        versionCode 4
+        versionName "2.5.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -86,4 +86,7 @@ dependencies {
 
     //startapp
     implementation 'com.startapp:inapp-sdk:4.8.7'
+
+    //rating us
+    implementation 'com.github.hotchemi:android-rate:1.0.1'
 }
